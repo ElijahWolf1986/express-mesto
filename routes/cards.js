@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { getAllCards } = require('../controllers/getters');
+const { getAllCards, getCardsById } = require('../controllers/getters');
 
-
+router.use('/cards/:id', getCardsById);
 router.use('/cards', getAllCards);
 
 

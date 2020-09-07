@@ -10,12 +10,21 @@
   "author": "Volkov Ilya",
   "license": "ISC",
   "dependencies": {
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslinter": "^3.2.1",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElijahWolf1986/express-mesto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ElijahWolf1986/express-mesto/issues"
+  },
+  "homepage": "https://github.com/ElijahWolf1986/express-mesto#readme"
 }

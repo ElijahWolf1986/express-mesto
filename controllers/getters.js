@@ -37,7 +37,7 @@ const getUserById = async (req, res) => {
     if (!data) {
       throw new Error('Data has not been received, sorry');
     }
-    const foundUser = data.users.find(u => u._id === req.params.id);
+    const foundUser = data.find(u => u._id === req.params.id);
     if (!foundUser) {
       res
         .status(404)
@@ -55,8 +55,33 @@ const getUserById = async (req, res) => {
   }
 }
 
+const getCardsById = async (req, res) => {
+  try {
+    const data = await getAllInfoJson(path.join(__dirname, '..', 'data', 'cards.json'));
+    if (!data) {
+      throw new Error('Data has not been received, sorry');
+    }
+    const foundCard = data.find(c => c._id === req.params.id);
+    if (!foundCard) {
+      res
+        .status(404)
+        .send({ "message": "Нет карты с таким id" })
+      return;
+    }
+    res
+      .status(200)
+      .send(foundCard)
+  } catch (err) {
+    res
+      .status(500)
+      .send('Something goes wrong ;(')
+    return;
+  }
+}
+
 module.exports = {
   getAllUsers: getAllUsers,
   getUserById: getUserById,
-  getAllCards: getAllCards
+  getAllCards: getAllCards,
+  getCardsById: getCardsById
 }
