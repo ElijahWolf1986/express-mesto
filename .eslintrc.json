@@ -1,6 +1,6 @@
 {
   "rules": {
-    "no-underscore-dangle": ["error", { "allow": ["foo_", "_bar"] }]
+    "no-underscore-dangle": "off"
 
   },
   "extends": "airbnb-base"
