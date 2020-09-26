@@ -10,7 +10,8 @@
   "author": "Volkov Ilya",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
   },
   "devDependencies": {
     "eslint": "^7.8.1",
