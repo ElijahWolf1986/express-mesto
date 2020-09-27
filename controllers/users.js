@@ -8,16 +8,10 @@ const getAllUsers = (req, res) => {
     });
 };
 
-const getUserById = (req, res) => {
-  User.findById(req.params.id)
-    .then((user) => res.send({ data: user }))
-    // eslint-disable-next-line consistent-return
-    .catch((err) => {
-      if (err.name === 'CastError') {
-        return res.status(404).send({ message: 'пользователь не найден!' });
-      }
-      return res.status(500).send({ message: 'Ошибка сервера. Что то пошло не так..' });
-    });
+const getUserById = async (req, res) => {
+  const user = await User.findById(req.params.id)
+    .orFail(() => res.status(404).send({ message: 'Такого пользователя нет!' }));
+  res.status(200).send({ data: user });
 };
 
 const createUser = (req, res) => {
