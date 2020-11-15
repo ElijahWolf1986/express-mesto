@@ -11,6 +11,6 @@
 
 ### Добавлено:
 3 роута: 
-1. GET http://localhost:3000/users
-2. GET http://localhost:3000/cards
-3. GET http://localhost:3000/users/8340d0ec33270a25f2413b69|JSON-пользователя
+1. GET /users
+2. GET /cards
+3. GET /users/8340d0ec33270a25f2413b69|JSON-пользователя
